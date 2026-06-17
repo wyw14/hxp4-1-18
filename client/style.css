@@ -247,6 +247,99 @@ h1 {
   font-size: 0.95rem;
 }
 
+.save-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.save-modal-content {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.save-modal-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.save-modal-content p {
+  color: #ccc;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.saved-level {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #48dbfb;
+}
+
+.save-modal-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.modal-btn {
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.resume-btn {
+  background: linear-gradient(45deg, #1dd1a1 0%, #10ac84 100%);
+  box-shadow: 0 4px 15px rgba(29, 209, 161, 0.4);
+}
+
+.resume-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(29, 209, 161, 0.6);
+}
+
+.abandon-btn {
+  background: linear-gradient(45deg, #ff6b6b 0%, #ee5a5a 100%);
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+.abandon-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+}
+
 @media (max-width: 500px) {
   .container {
     padding: 20px;
@@ -260,5 +353,17 @@ h1 {
   .game-board {
     gap: 10px;
     padding: 15px;
+  }
+
+  .save-modal-content {
+    padding: 30px 20px;
+  }
+
+  .save-modal-buttons {
+    flex-direction: column;
+  }
+
+  .modal-btn {
+    width: 100%;
   }
 }
